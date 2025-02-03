@@ -8,7 +8,7 @@ import ReactDOM from 'react-dom/client';
 //DO I need this?
 //Too scared to remove it
 
-//Also professor please have mercy
+//Also please have mercy
 
 
 
