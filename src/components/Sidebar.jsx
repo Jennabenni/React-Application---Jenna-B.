@@ -18,6 +18,17 @@ export default function Sidebar({initialMenuItems}) {
   //here is where the code is vvv
   let [menuItems, setMenuItems] = useState(initialMenuItems)
   // TODO: 2 Using a state hook, maintain the current menu items as an array state.
+/*Use State is a hook, and creates a variable and a function
+
+let[menuItems, setMenuItems] destructuring the array, and the two inside are the variables
+"Create a state variable called menuItems, and set its initial value to initial menu items, and also create a function (set menu items) that we can update the state of menu items later"
+
+
+I'm writing this out to understand it better
+*/
+
+
+
   // let [menuItems, setMenuItems] = useState(initialMenuItems)
 
 
@@ -27,7 +38,18 @@ export default function Sidebar({initialMenuItems}) {
   let [filter, setFilter] = useState("")
   // Adds a single string passed in as parameter to the state element
   // "menuItems" that holds the set of current menu items.
+/*
 
+useState is a hook
+1. filter
+2. setFilter -- updates filter state
+useState("") initializes state with value passed to it
+
+create state variable called filter and set initial value to empty string
+set filter updates it later
+
+
+*/
 
 
 
@@ -45,10 +67,35 @@ export default function Sidebar({initialMenuItems}) {
     //   setMenuItems([item, ...menuItems])
   }, [newMenuItem, menuItems])
 
+/*
+function is addMenuItem, uses a hook called Callback
+
+useCallback returns memorized version of callback function,
+function will only be recreated if one of the dependencies (newMenuItem, menuItem) changes
+
+addMenu is name
+
+if (newMenuItem bla bla)
+checks that the input isn't blank
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
 
 const filteredMenuItems = menuItems.filter((item) => item.toLowerCase().includes(filter.toLowerCase()))
 
-
+//Makes it case insensitive
 
   // TODO: 4. Display ONLY the menu items that contain the filter element value
   // "term" in them. Each menu item should be an unordered list item wrapped in an unordered list (ul) element.
@@ -84,6 +131,11 @@ const filteredMenuItems = menuItems.filter((item) => item.toLowerCase().includes
 //const root = ReactDOM.createRoot(document.getElementById('root'));
 //root.render(<Garage />);
 
+
+/*When I tried to do the method with root.render, it wasn't working
+
+So I tried another method
+*/
 
 
   return (
